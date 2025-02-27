@@ -18,11 +18,11 @@ const PokemonList = () => {
     "https://pokeapi.co/api/v2/pokemon"
   );
 
-  // Fetch Pokemon list or a single Pokemon based on search query
+  // Fetch Pokémon list or a single Pokémon based on search query
   useEffect(() => {
     const fetchData = async () => {
       const data = await getPokemons(currentUrl);
-      console.log("data :: ", data);
+      console.log("data :: ", );
       
       setResponses(data);
     };
@@ -59,7 +59,7 @@ const PokemonList = () => {
             );
           })
         ) : (
-          <p className="text-center col-span-full text-2xl">No Pokemon found</p>
+          <p className="text-center col-span-full text-2xl">No Pokémon found</p>
         )}
       </div>
       <div className="flex w-full justify-between *:px-10 *:border *:py-2 *:rounded-full">

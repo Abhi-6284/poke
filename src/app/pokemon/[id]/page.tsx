@@ -5,13 +5,17 @@ import Image from "next/image";
 import { Metadata } from "next";
 import Link from "next/link";
 
-const PokemonDetailPage = async ({ params }: { params: { id: string } }) => {
-  if (!params || !params.id)
-    return <p className="text-center">Invalid Pokemon ID</p>;
+const PokemonDetailPage = async ({
+  params,
+}: {
+  params: Promise<{ id: string[] }>;
+}) => {
+  const { id } = await params;
+  if (!params || !id) return <p className="text-center">Invalid Pokemon ID</p>;
 
-  const pokemonId: number = Number(decodeURIComponent(params.id));
+  
+  const pokemonId: number = Number(id[0]);
   const pokemon = await getPokemonsInDetail(pokemonId);
-  console.log("pokemon :: ", pokemon);
 
   return (
     <div className="container mx-auto flex flex-col items-center gap-6 my-10 p-4 md:p-8">
@@ -146,18 +150,26 @@ export default PokemonDetailPage;
 export const generateMetadata = async ({
   params,
 }: {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }): Promise<Metadata> => {
-  if (!params || !params.id) return { title: "Pokemon Details" };
+  const { id } = await params;
 
-  const pokemonId: number = Number(decodeURIComponent(params.id));
+  if (!id) {
+    return { title: 'Pokemon Details' };
+  }
+
+  const pokemonId = Number(id);
+  if (isNaN(pokemonId)) {
+    return { title: 'Pokemon Details' };
+  }
+
   const pokemon = await getPokemonsInDetail(pokemonId);
 
   return {
     title: `${pokemon.name.toUpperCase()} - Pokemon Details`,
     description: `Explore details of ${pokemon.name} including stats, abilities, moves, and more.`,
     openGraph: {
-      images: [pokemon.sprites.other["official-artwork"].front_default],
+      images: [pokemon.sprites.other['official-artwork'].front_default],
     },
   };
 };
