@@ -14,8 +14,10 @@ const PokemonDetailPage = async ({
   if (!params || !id) return <p className="text-center">Invalid Pokemon ID</p>;
 
   
-  const pokemonId: number = Number(id[0]);
+  const pokemonId: number = Number(id);
   const pokemon = await getPokemonsInDetail(pokemonId);
+
+  const p_id = String(pokemonId).padStart(6, '0');
 
   return (
     <div className="container mx-auto flex flex-col items-center gap-6 my-10 p-4 md:p-8">
@@ -39,7 +41,7 @@ const PokemonDetailPage = async ({
             </CardContent>
           </Card>
           <h1 className="text-4xl md:text-5xl capitalize font-bold text-gray-800 text-center">
-            {pokemon.name} <span className="text-gray-500">#{pokemonId}</span>
+            {pokemon.name} <span className="text-gray-500">#{p_id}</span>
           </h1>
 
           <div className="flex flex-wrap justify-center gap-3">

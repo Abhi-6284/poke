@@ -1,12 +1,10 @@
-import PokemonList from '@/components/HomePage/PokemonList'
-import React from 'react'
+import PokemonList from "@/components/HomePage/PokemonList";
 
-const PokemonPage = () => {
-  return (
-    <div>
-        <PokemonList />
-    </div>
-  )
-}
+const PokemonPage = async () => {
+  const res = await fetch('https://pokeapi.co/api/v2/pokemon');
+  const data = await res.json();
 
-export default PokemonPage
+  return <PokemonList initialData={data} />;
+};
+
+export default PokemonPage;

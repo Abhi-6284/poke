@@ -74,7 +74,7 @@ bun run start
 
 ## 📜 Features
 
-✅ **Dynamic Pokémon pages** based on ID
+✅ **Dynamic Pokemon pages** based on ID
 ✅ **Server-side rendering** for fast loading
 ✅ **Optimized images** with `next/image`
 ✅ **Metadata for SEO**
