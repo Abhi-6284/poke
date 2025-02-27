@@ -1,8 +1,38 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 Pokemon Next.js Project
 
-## Getting Started
+This is a **Pokemon Details Page** built using **Next.js 15**, featuring server-side rendering, dynamic routes, and optimized image handling with `next/image`.
 
-First, run the development server:
+## 📌 Prerequisites
+
+Ensure you have the following installed:
+
+- **Node.js** (Latest LTS version recommended)
+- **npm, yarn, pnpm, or bun** (Choose one package manager)
+
+## 🛠️ Installation
+
+Clone the repository:
+
+```bash
+git clone <your-repository-url>
+cd <your-project-folder>
+```
+
+Install dependencies:
+
+```bash
+npm install
+# or
+yarn
+# or
+pnpm install
+# or
+bun install
+```
+
+## ▶️ Run the Development Server
+
+Start the server using any of these:
 
 ```bash
 npm run dev
@@ -14,23 +44,42 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then, open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🔥 Build and Start for Production
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+To build the project:
 
-## Learn More
+```bash
+npm run build
+# or
+yarn build
+# or
+pnpm build
+# or
+bun run build
+```
 
-To learn more about Next.js, take a look at the following resources:
+To start the production server:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+npm run start
+# or
+yarn start
+# or
+pnpm start
+# or
+bun run start
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📜 Features
 
-## Deploy on Vercel
+✅ **Dynamic Pokémon pages** based on ID
+✅ **Server-side rendering** for fast loading
+✅ **Optimized images** with `next/image`
+✅ **Metadata for SEO**
+✅ **Styled with Tailwind CSS**
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+💡 **Contributions are welcome!** Feel free to fork, star ⭐, and submit PRs.
