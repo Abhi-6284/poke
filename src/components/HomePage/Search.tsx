@@ -101,7 +101,7 @@ const Search = () => {
               return (
                 <li
                   key={p.name}
-                  className="p-2 border-b"
+                  className="p-2 border-b hover:bg-slate-100 rounded-xl cursor-pointer transition-all duration-300 ease-in-out"
                   onClick={() => router.push(`/pokemon/${pokemonId}`)}
                 >
                   {p.name}

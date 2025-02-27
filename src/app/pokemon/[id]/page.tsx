@@ -49,7 +49,7 @@ const PokemonDetailPage = async ({
               ({ type }: { type: { name: string } }, index: number) => (
                 <Badge
                   key={index}
-                  className="px-4 py-2 capitalize bg-gray-300 text-gray-900"
+                  className="px-4 py-2 capitalize bg-gray-300 text-gray-900 hover:text-white cursor-default"
                 >
                   {type.name}
                 </Badge>
@@ -70,7 +70,7 @@ const PokemonDetailPage = async ({
                   ) => (
                     <Badge
                       key={index}
-                      className="px-4 py-2 capitalize bg-blue-300 text-blue-900"
+                      className="px-4 py-2 capitalize bg-blue-300 text-blue-900 hover:text-white cursor-default"
                     >
                       {ability.name}
                     </Badge>
